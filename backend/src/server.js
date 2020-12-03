@@ -1,5 +1,5 @@
-import app from './app';
-import database from './database';
+const app = require ('./app');
+const database = require ('./database');
 
 database.sync();
 console.log('Database running at 3306');

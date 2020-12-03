@@ -1,13 +1,13 @@
-import noteModel from './noteModel';
+const noteModel = require('./noteModel');
 
 function create(note) {
     return noteModel.create(note);
 }
 
-function update(noteId, note) {
+function update(id, note) {
     return noteModel.update(note, {
         where: {
-            id: noteId
+            id: id
         }
     });
 }
@@ -24,7 +24,7 @@ function del(noteId) {
     });
 }
 
-export default {
+module.exports = {
     create,
     update,
     find,

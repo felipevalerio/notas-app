@@ -1,5 +1,5 @@
-import Sequelize from 'sequelize';
-import database from '../database';
+const Sequelize = require('sequelize');
+const database = require('../database');
 
 const NoteModel = database.define('note', {
 
@@ -19,4 +19,4 @@ const NoteModel = database.define('note', {
     }
 });
 
-export default NoteModel;
+module.exports = NoteModel;
