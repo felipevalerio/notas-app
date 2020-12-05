@@ -22,7 +22,7 @@ async function createNotes(req, res) {
 async function updateNotes(req, res) {
     const id = req.params.id;
     const note = req.body;
-    const result = await noteRepository.update(id,note);
+    const result = await noteRepository.update(id, note);
 
     if(!result)
         return res.sendStatus(400);

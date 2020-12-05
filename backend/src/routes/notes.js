@@ -7,8 +7,8 @@ router.get('/notes', notesController.listNotes);
 
 router.post('/create', notesController.createNotes);
 
-router.put('/update/:noteId', notesController.updateNotes);
+router.put('/update/:id', notesController.updateNotes);
 
-router.delete('/delete/:noteId', notesController.deleteNotes);
+router.delete('/delete/:id', notesController.deleteNotes);
 
 module.exports = router;
