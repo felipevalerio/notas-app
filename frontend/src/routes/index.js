@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import HomePage from '../pages/HomePage';
+import CreateNote from '../pages/CreateNote';
 
 // '/' -> Página Inicial
 // '/create' -> CreateNote
@@ -12,7 +13,8 @@ function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={HomePage}/> 
+                <Route exact path="/" component={HomePage}/>
+                <Route exact path="/create" component={CreateNote}/> 
             </Switch>
         </BrowserRouter>
     )

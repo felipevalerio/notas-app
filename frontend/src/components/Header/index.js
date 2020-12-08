@@ -4,7 +4,7 @@ import {Navbar} from 'react-bootstrap';
 function Header(props) {
     return (
         <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                 <p>{props.children}</p>
             </Navbar.Brand>
         </Navbar>
