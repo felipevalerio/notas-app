@@ -1,11 +1,14 @@
 #formTitle {
+    margin: auto;
     width: 35%;
 }
 
 #formDescription {
+    margin: auto;
     width: 35%;
 }
 
 div {
-    justify-content: center;
+    position: relative;
+    text-align: center;
 }

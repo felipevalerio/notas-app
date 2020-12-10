@@ -4,12 +4,18 @@ import { Form, Button, Container } from 'react-bootstrap';
 import './styles.css';
 
 function CreateNote() {
+
+
+    function handleSubmit() {
+
+    }
+
     return (
         <>
             <Header>Notas-App</Header>
             <Container>
                 <div>
-                    <Form>
+                    <Form onSubmit= {this.handleSubmit}>
                         <Form.Group controlId="formTitle">
                             <Form.Label>Título</Form.Label>
                             <Form.Control type="text" placeholder="Título da nota"/>
@@ -19,6 +25,7 @@ function CreateNote() {
                             <Form.Label>Descrição</Form.Label>
                             <Form.Control type="text" placeholder="Descrição da nota"/>
                         </Form.Group>
+                        <Button variant = "primary" type="submit">Salvar</Button>
                     </Form>
                 </div>
             </Container>
