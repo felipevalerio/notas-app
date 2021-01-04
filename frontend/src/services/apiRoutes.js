@@ -8,6 +8,13 @@ async function create(form) {
     return result.data;
 }
 
+async function list() {
+    const result = await api.get('notes');
+
+    return result.data;
+}
+
 export default {
-    create
+    create,
+    list
 };

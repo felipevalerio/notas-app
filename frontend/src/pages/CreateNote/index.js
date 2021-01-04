@@ -20,6 +20,7 @@ function CreateNote() {
         await api.create(form)
             .then((response) => {
                 console.log(response)
+                setForm({title: '', description: ''})
             })
             .catch((error) => {
                 console.log(error)
