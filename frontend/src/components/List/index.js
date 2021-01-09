@@ -4,14 +4,15 @@ import api from '../../services/apiRoutes';
 
 function List() {
 
-    const [note, setNote] = useState({
-        title: '',
-        description: '',
-    });
+    const [note, setNote] = useState([]);
 
-    useEffect(async () => {
-        const result = await api.list();
-        setNote(result.data);
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await api.list();
+            setNote(result.note);
+        };
+
+        fetchData();
     }, []);
 
     return (
@@ -20,7 +21,7 @@ function List() {
                 <Card.Title>Suas Notas</Card.Title>
                 <ListGroup variant="flush">
                     
-                        {note.title.map(item => (
+                        {note.map(item => (
                             <ListGroup.Item key={item.id}>
                                 <p>{item.title}</p>
                             </ListGroup.Item>
