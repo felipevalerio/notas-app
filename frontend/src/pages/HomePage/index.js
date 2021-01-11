@@ -6,7 +6,6 @@ function HomePage() {
     return (
         <>
             <Header>Notas-App</Header>
-            <h2>Página Inicial</h2>
             <List />
         </>
     )

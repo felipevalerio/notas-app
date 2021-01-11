@@ -14,7 +14,14 @@ async function list() {
     return result.data;
 }
 
+async function deleteNote(id) {
+    const result = await api.delete('delete', id);
+
+    return result.data;
+}
+
 export default {
     create,
-    list
+    list,
+    deleteNote
 };
