@@ -35,7 +35,7 @@ function List() {
                         {note.map(item => (
                             <ListGroup.Item key={item.id} as="li">
                                 <p>{item.title} 
-                                <button class="btn btn-outline-light" onClick={handleRemove(item.id)}><img src={trashIcon} alt=""/></button></p> 
+                                <button class="btn btn-outline-light" onClick={() => handleRemove(item.id)}><img src={trashIcon} alt=""/></button></p> 
                             </ListGroup.Item>
                         ))}
 
