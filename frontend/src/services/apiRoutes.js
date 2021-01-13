@@ -15,7 +15,7 @@ async function list() {
 }
 
 async function deleteNote(id) {
-    const result = await api.delete('delete', id);
+    const result = await api.delete(`delete/${id}`);
 
     return result.data;
 }
