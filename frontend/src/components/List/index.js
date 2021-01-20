@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Card, ListGroup } from 'react-bootstrap';
 import api from '../../services/apiRoutes';
 import trashIcon from '../../icons/garbage.png';
@@ -7,6 +7,18 @@ function List() {
 
     const [note, setNote] = useState([]);
 
+
+    const handleRemove = useCallback((id) => {
+        api.deleteNote(id)
+            .then((response) => {
+                console.log(response)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }, []) 
+    
+    /*
     async function handleRemove(id) {
         await api.deleteNote(id)
             .then((response) => {
@@ -16,7 +28,7 @@ function List() {
                 console.log(error)
             })
     }
-
+    */
     useEffect(() => {
         const fetchData = async () => {
             const result = await api.list();
@@ -24,7 +36,7 @@ function List() {
         };
 
         fetchData();
-    }, []);
+    }, [handleRemove]);
 
     return (
         <Card style={{ width: '18rem' }}>
