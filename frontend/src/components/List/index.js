@@ -6,37 +6,29 @@ import trashIcon from '../../icons/garbage.png';
 function List() {
 
     const [note, setNote] = useState([]);
+    const [flag, setFlag] = useState(false);
 
 
-    const handleRemove = useCallback((id) => {
-        api.deleteNote(id)
-            .then((response) => {
-                console.log(response)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-    }, []) 
-    
-    /*
     async function handleRemove(id) {
         await api.deleteNote(id)
             .then((response) => {
                 console.log(response)
+                setFlag(true)
             })
             .catch((error) => {
                 console.log(error)
             })
     }
-    */
+
     useEffect(() => {
         const fetchData = async () => {
             const result = await api.list();
             setNote(result);
+            setFlag(false);
         };
 
         fetchData();
-    }, [handleRemove]);
+    }, [flag]);
 
     return (
         <Card style={{ width: '18rem' }}>
